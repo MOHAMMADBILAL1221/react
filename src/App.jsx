@@ -38,7 +38,7 @@ function App() {
     <>
       <Nav />
 
-      <Chip isChosen={chosen === "All"}  title={"All"} />
+      <Chip OnClick={()=>{setchosen("All")}} isChosen={chosen === "All"}  title={"All"} />
       {category.map((category) => (
         <Chip
           isChosen={chosen === category.slug}
