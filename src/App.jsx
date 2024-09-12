@@ -1,63 +1,35 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Card from "./components/card";
+import Products from "./pages/products";
+import Home from "./pages/home";
 import Nav from "./components/nav";
-import Chip from "./components/chip";
+import Footer from "./components/footer";
+import Auth from "./pages/Auth/Auth";
+import SignUp from "./pages/Auth/signup"
+import SignIn from "./pages/Auth/signin"
+import ProductDetail from "./pages/productsdetail";
+import Todo from "./pages/todo";
+import ThemeContextProvider from "./context/context";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [loading, setloading] = useState(true);
-  const [category, setcategory] = useState([]);
-  const [chosen, setchosen] = useState("All");
-
-  useEffect(() => {
-    const url =  chosen == "All"
-        ? "https://dummyjson.com/products"
-        : `https://dummyjson.com/products/category/${chosen}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.products);
-        setloading(false);
-      }).catch(()=>{
-        setloading(false)
-      })
-  }, [chosen]);
-
-  useEffect(() => {
-    fetch("https://dummyjson.com/products/categories")
-      .then((res) => res.json())
-      .then((data) => {
-        setcategory(data);
-        setloading(false);
-
-      })
-  }, []);
-
   return (
-    <>
+    <ThemeContextProvider>
+    <BrowserRouter>
       <Nav />
-
-      <Chip OnClick={()=>{setchosen("All")}} isChosen={chosen === "All"}  title={"All"} />
-      {category.map((category) => (
-        <Chip
-          isChosen={chosen === category.slug}
-          title={category.name}
-          key={category.slug}
-          OnClick={() => {
-            setchosen(category.slug);
-          }}
-        />
-      ))}
-
-      <div className="flex flex-wrap">
-        {loading ? (
-          <h1 className="font-bold">LOADING......</h1>
-        ) : (
-          products.map((data) => <Card value={data} />)
-        )}
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="todo" element={<Todo />} />
+        <Route path="/auth">
+        <Route index element={<Auth />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="signin" element={<SignIn />} />
+        </Route>
+        <Route path="/product" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+    </ThemeContextProvider>
   );
 }
 
