@@ -10,6 +10,7 @@ import SignIn from "./pages/Auth/signin"
 import ProductDetail from "./pages/productsdetail";
 import Todo from "./pages/todo";
 import ThemeContextProvider from "./context/context";
+import Imagegalery from "./pages/imagegaleery";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="todo" element={<Todo />} />
+        <Route path="image" element={<Imagegalery />} />
         <Route path="/auth">
         <Route index element={<Auth />} />
         <Route path="signup" element={<SignUp />} />
