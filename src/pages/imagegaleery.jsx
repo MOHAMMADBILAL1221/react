@@ -109,8 +109,10 @@ const Imagegalery = () => {
           </div>
         </div>
       )}
+      <video className='my-20 m-auto rounded-xl shadow-2xl hover:scale-105 transition-all ease-in-out border border-teal-700' width={800} src='./public/word.mp4' controls>
+      </video>
     </>
   );
 };
-
+    
 export default Imagegalery;

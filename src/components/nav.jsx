@@ -34,6 +34,7 @@ function handletheme (){
       <Link to={"product"} className="mr-5 hover:text-gray-900">Products</Link>
       <Link to={"auth"} className="mr-5 hover:text-gray-900">Auth</Link>
       <Link to={"image"} className="mr-5 hover:text-gray-900">Image Gallery</Link>
+      <Link to={"material"} className="mr-5 hover:text-gray-900">Material UI</Link>
       <Link to={"todo"} className="mr-5 hover:text-gray-900">todo App </Link>
     </nav>
     <button onClick={handletheme} className={`${theme == 'light' ? " inline-flex items-center bg-teal-800 border-0 py-2 px-3 focus:outline-none hover:bg-teal-900 rounded text-white mt-4 md:mt-0" : " inline-flex items-center bg-white border-0 py-2 px-3 focus:outline-none hover:bg-white-900 rounded text-black mt-4 md:mt-0"}`}>
