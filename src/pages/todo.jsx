@@ -35,8 +35,21 @@ function Todo() {
         </h1>
       ))}
     </div>
-    <video className='my-20 m-auto rounded-xl shadow-2xl hover:scale-105 transition-all ease-in-out border border-teal-700' width={800} src='./public/thor1.mp4' controls>
-    </video>
+   
+    <div className="my-5 ">
+        <iframe
+        className="m-auto rounded-xl shadow-2xl hover:scale-105 transition-all ease-in-out border border-teal-700"
+          width={800}
+          height={400}
+          src="https://www.youtube.com/embed/5xFMEANAOdI?si=I7rqOqPv-DTiQQRQ"
+          title="YouTube video player"
+          frameBorder={0}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen=""
+        />
+      </div>
+   
       </>
     
   );

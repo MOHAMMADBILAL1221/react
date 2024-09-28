@@ -109,10 +109,20 @@ const Imagegalery = () => {
           </div>
         </div>
       )}
-      <video className='my-20 m-auto rounded-xl shadow-2xl hover:scale-105 transition-all ease-in-out border border-teal-700' width={800} src='./public/word.mp4' controls>
-      </video>
+
+      <iframe
+        width="800"
+        height="400"
+        className="m-auto  rounded-xl shadow-2xl hover:scale-105 transition-all ease-in-out border border-teal-700"
+        src="https://www.youtube.com/embed/Dwno4n37qos?si=pTVSHho7katUSF7d"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
     </>
   );
 };
-    
+
 export default Imagegalery;
