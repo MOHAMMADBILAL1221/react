@@ -12,6 +12,7 @@ import Todo from "./pages/todo";
 import ThemeContextProvider from "./context/context";
 import Imagegalery from "./pages/imagegaleery";
 import MaterialUi from "./pages/materialUi";
+import Carts from "./pages/carts";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="signup" element={<SignUp />} />
             <Route path="signin" element={<SignIn />} />
           </Route>
+          <Route path="/carts" element={<Carts />} />
           <Route path="/product" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>

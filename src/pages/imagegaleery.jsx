@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Imagegalery = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -70,13 +71,13 @@ const Imagegalery = () => {
               key={value.id}
               className="lg:w-1/4 md:w-1/2 p-4 w-full"
             >
-              <a className="block relative h-48 rounded overflow-hidden">
+              <Link className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
                   src={value.img}
                 />
-              </a>
+              </Link>
               <div className="mt-4">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                   CATEGORY
@@ -113,7 +114,8 @@ const Imagegalery = () => {
       <iframe
         width="800"
         height="400"
-        className="m-auto  rounded-xl shadow-2xl hover:scale-105 transition-all ease-in-out border border-teal-700"
+        className="m-auto rounded-xl shadow-2xl hover:scale-105 transition-all ease-in-out border border-teal-700
+        w-full h-[200px] sm:h-[300px] md:h-[400px] md:w-[700px] lg:w-[800px]"
         src="https://www.youtube.com/embed/Dwno4n37qos?si=pTVSHho7katUSF7d"
         title="YouTube video player"
         frameborder="0"
