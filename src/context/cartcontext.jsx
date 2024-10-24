@@ -13,30 +13,40 @@ function CartContextProvider({ children }) {
     } else {
       arr[itemIndex].quantity++;
     }
-    setcartitems([...arr])
+    setcartitems([...arr]);
   }
 
-  function removeItemFromCart() {
+  function LessQuantityFromCart(id) {
+    const itemIndex = cartitems.findIndex((data) => data.id == id);
+    arr[itemIndex].quantity--;
+    setcartitems([...arr]);
+  }
+
+  function removeItemFromCart(id) {
     const arr = cartitems;
-    const itemIndex = cartitems.findIndex((data) => data.id == item.id);
+    const itemIndex = cartitems.findIndex((data) => data.id == id);
 
     arr.splice(itemIndex, 1);
     setcartitems([...arr]);
   }
   function isItemAdded(id) {
     const arr = cartitems;
-    const itemIndex = cartitems.findIndex((data) => data.id == item.id);
+    const itemIndex = cartitems.findIndex((data) => data.id == id);
 
     if (itemIndex == -1) {
-        return null;
-    }else{
-        return arr[itemIndex]
+      return null;
+    } else {
+      return arr[itemIndex];
     }
   }
 
-  return <CartContext.Provider
-  value={{cartitems , additemcart ,removeItemFromCart ,isItemAdded}}
-  >{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider
+      value={{ cartitems, additemcart,LessQuantityFromCart, removeItemFromCart, isItemAdded }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 }
 
 export default CartContextProvider;

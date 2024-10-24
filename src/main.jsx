@@ -6,10 +6,13 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import CartContextProvider from './context/cartcontext.jsx';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <CartContextProvider>
     <App />
+    </CartContextProvider>
   </StrictMode>,
 )

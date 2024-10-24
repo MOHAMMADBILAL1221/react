@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/cartcontext";
 
 function Products() {
-  const cartitems = useContext(CartContext);
+  const { cartitems , additemcart } = useContext(CartContext);
   console.log(cartitems);
-  
+
   const [products, setProducts] = useState([]);
   const [loading, setloading] = useState(true);
   const [category, setcategory] = useState([]);
@@ -67,7 +67,7 @@ function Products() {
       <div className="flex justify-evenly py-3">
         <h1 className="text-3xl ">products</h1>
         <Link to={"/carts"}>
-          <Badge count={10}>
+          <Badge count={cartitems.length}>
             <ShoppingCartOutlined style={{ fontSize: 40 }} />
           </Badge>
         </Link>
